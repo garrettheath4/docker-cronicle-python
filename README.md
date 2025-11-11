@@ -1,8 +1,10 @@
 # docker-cronicle-python
 
 Docker project for Cronicle, bundling a python environment and script runner.
+Forked from **[flavsdotpy](https://github.com/flavsdotpy/docker-cronicle-python)** and
+**[deltacodepl](https://github.com/deltacodepl/docker-cronicle-python)**.
 
-## Instalation
+## Installation
 
 ### 1. Prepare working dir
 
@@ -30,7 +32,7 @@ Default account and password:
 ## Adding a new Python script to run
 
 * Copy your python script to `$HOME/.cronicle/scripts/python`
-* Open [Cronicle console](localhost:3012)
+* Open [Cronicle console](http://localhost:3012)
 * Go to `Schedule > [+] Add event...`
 * Create the job as:
   * Plugin: `Python Script`.
@@ -43,8 +45,10 @@ For all other configurations, please refer to [cronicle official docs](https://g
 
 ## Acknowledgments
 
-Thanks `soulteary` for making Cronicle available for Docker.
+* Thanks `soulteary` for making Cronicle available for Docker.
+* Thanks `flavsdotpy` and `deltacodepl` for making Cronicle Edge available for Docker via your GitHub repos.
 
 ## Authors
 
-* **[flavsdotpy](github.com/flavsdotpy)**
+* **[flavsdotpy](https://github.com/flavsdotpy/docker-cronicle-python)**
+* **[deltacodepl](https://github.com/deltacodepl/docker-cronicle-python)**

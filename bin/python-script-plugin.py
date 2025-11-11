@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import hashlib
 import json
 import os
@@ -10,9 +10,12 @@ from pathlib import Path
 from uuid import uuid4
 
 
-ROOT_PYTHON_RUNTIME_PATH = Path("_runtime/python")
-ROOT_SOURCE_SCRIPTS_PATH = Path("scripts/python")
+ROOT_PYTHON_RUNTIME_PATH = Path("/tmp")
+ROOT_SOURCE_SCRIPTS_PATH = Path("/opt/cronicle/scripts")
 
+
+job_script_path = ""
+job_runtime_path = ""
 
 try:
     stdinput = sys.stdin.readline()
@@ -74,7 +77,7 @@ except Exception as e:
     print(json.dumps({
         "complete": 1,
         "code": 999,
-        "job_script_path": job_script_path,
-        "job_runtime_path": job_runtime_path,
+        "job_script_path": str(job_script_path),
+        "job_runtime_path": str(job_runtime_path),
         "description": str(e)
     }))

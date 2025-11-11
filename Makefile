@@ -2,7 +2,15 @@ prepare:
 	mkdir $$HOME/.cronicle
 
 build:
-	docker build -t cronicle-python .
+	docker buildx create --use --name builder || true
+	docker buildx build \
+	  --platform linux/amd64 \
+	  -t garrettheath4/cronicle-python:latest \
+	  -t garrettheath4/cronicle-python:1.13.5-py3 \
+	  --push .
+
+push:
+	docker push --all-tags garrettheath4/cronicle-python
 
 run:
 	docker run \
